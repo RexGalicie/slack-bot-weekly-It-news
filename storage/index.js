@@ -40,6 +40,16 @@ module.exports = config => {
       },
       allSync: () => {
         news_db.allSync();
+      },
+      removeAll: () => {
+        news_db.all(
+          objectsToList((err, data) => {
+            if (err) {
+              return;
+            }
+            data.map(item => news_db.delete(item.id));
+          })
+        );
       }
     }
   };

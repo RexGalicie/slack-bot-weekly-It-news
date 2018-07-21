@@ -58,6 +58,27 @@ module.exports = controller => {
   );
 
   controller.hears(
+    ['new list'],
+    'direct_message,direct_mention,mention',
+    async (bot, message) => {
+      try {
+        await controller.storage.news.removeAll();
+        bot.reply(message, {
+          text: 'Success clear list',
+          unfurl_links: false,
+          unfurl_media: false
+        });
+      } catch (e) {
+        bot.reply(message, {
+          text: 'Error',
+          unfurl_links: false,
+          unfurl_media: false
+        });
+      }
+    }
+  );
+
+  controller.hears(
     [urlRegex()],
     'direct_message,direct_mention,message_received',
     async (bot, message) => {
