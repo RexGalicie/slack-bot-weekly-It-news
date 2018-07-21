@@ -1,5 +1,10 @@
-var env = require('node-env-file');
-env(__dirname + '/.env');
+const env = require('node-env-file');
+const fs = require('fs');
+
+const path = __dirname + '/.env';
+if (fs.existsSync(path)) {
+  env(path);
+}
 
 if (!process.env.clientId || !process.env.clientSecret || !process.env.PORT) {
   console.log('Error: Specify clientId clientSecret and PORT in environment');
@@ -50,3 +55,14 @@ var normalizedPath = require('path').join(__dirname, 'skills');
 require('fs').readdirSync(normalizedPath).forEach(function(file) {
   require('./skills/' + file)(controller);
 });
+
+function usage_tip() {
+  console.log('~~~~~~~~~~');
+  console.log('Botkit Starter Kit');
+  console.log('Execute your bot application like this:');
+  console.log(
+    'clientId=<MY SLACK CLIENT ID>= clientSecret=<MY CLIENT SECRET>= PORT<=PORT>= node bot.js'
+  );
+  console.log('Get Slack app credentials here: https://api.slack.com/apps');
+  console.log('~~~~~~~~~~');
+}
