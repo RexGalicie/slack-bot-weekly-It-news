@@ -94,5 +94,14 @@ describe('Mongo', () => {
         collectionObj.findOneAndDelete.should.be.calledWith({ id: 'walterwhite' }, cb)
       })
     })
+
+    describe(method + '.clear', () => {
+      it('should call clear', () => {
+        const cb = sinon.stub()
+
+        Storage(config)[method].clear(cb)
+        collectionObj.remove.should.be.calledWith({}, cb)
+      })
+    })
   })
 })
