@@ -1,18 +1,24 @@
 {
-    "name": "Botkit Starter Kit",
-    "description": "A starting point for building custom Slack applications",
-    "keywords": ["node", "bots", "slack", "botkit"],
-    "success_url": "/",
-    "addons": [{
-        "plan": "mongolab",
-        "as": "MONGO"
-    }],
-    "env": {
-        "clientId": {
-            "description": "Client ID provided by Slack"
-        },
-        "clientSecret": {
-            "description": "Client Secret provided by Slack"
-        }
+  "name": "Botkit Starter Kit",
+  "description": "A starting point for building custom Slack applications",
+  "keywords": ["node", "bots", "slack", "botkit"],
+  "success_url": "/",
+  "addons": [{
+    "plan": "mongolab",
+    "as": "MONGO"
+  }],
+  "env": {
+    "CLIENTID": {
+      "description": "Client ID provided by Slack"
+    },
+    "CLIENTSECRET": {
+      "description": "Client Secret provided by Slack"
+    },
+    "MONGODB_URI": {
+      "description": "Uri to mongo database"
+    },
+    "STORAGE": {
+      "description": "Type of storage"
     }
+  }
 }

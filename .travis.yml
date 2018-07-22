@@ -7,12 +7,18 @@ cache:
   - node_modules
 
 before_script:
-  # installs aws tools needed to deal with s3 buckets
   - gem update --system
-  - gem install yarn
   # application dependencies
-  - yarn
+  - yarn install
 
 script:
   # tests
   - yarn run test
+  
+deploy:
+  provider: heroku
+  api_key:
+    secure: aO3Nu+A7JB5r9+e2iAgzlYO5xT9/uatUb+UkmIGYDq9i7Afwr2HwktY4kretPdmNTyA9kiCpkMT6QwuNAMCQ87GIwJZRYX55hdOIoVk+vyVK1OlehrR841FX08gamh+jYv71vkMhervdT1vVAP+P3ZjvdKitRwlXok6XJR/5O+DAitBnbVz05VkpisLU4A8V6OFTRIrrTrP88oATRXVsf5InEtA0pwUiAkLwKTy3AsmCJOArFJckv0DAOS6dE/ciLfxAsXnEcdEdx+Z+Tc+Fe1DrYJEXrMAvx9T3qRTlf4apusTEsPGMChPMx/Tso0Yt6DAN7i8lLt8T3J6aOtBfxrv7vmHMS0gQQ64/ReFvgSOeWMGC61ZrDCqQZbAZMhmtAHt3qQf0bSs60nRMjNaxCjQ2v4iorOz5KwVFe6GcPU63RINJXqNKGkij/9TlDMJR3ynaUh2hBA9OjjIuCSchaL3vYd4v9hqdmNebTS4tEiDvDm0eB082QmCXCu+AuKVx8G/Jp16pFDcUmHZng32lHZT6oqWxFy35uvEDZ6Kn2jdak/TyfDg2ZiA6AtC7MbCWpip1tV/BoD9h5XsvX1NEvLWl1P2dsq0mx5oCKUB6JLl3rKOxNtkRV60EIx+OR201YKN+3CnA8wRb7a61d+WDp7fKzKqw1lQ6J/GGVpKcdkA=
+  app: radiant-hamlet-41509
+  on:
+    repo: RexGalicie/slack-bot-weekly-It-news
