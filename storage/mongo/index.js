@@ -7,10 +7,6 @@ module.exports = config => {
 
   const db = monk(config.mongoUri, config.mongoOptions)
 
-  db.catch(err => {
-    throw new Error(err)
-  })
-
   const storage = {}
   const tables = ['teams', 'channels', 'users']
   // if config.tables, add to the default tables

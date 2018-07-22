@@ -1,0 +1,18 @@
+sudo: required
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+
+before_script:
+  # installs aws tools needed to deal with s3 buckets
+  - gem update --system
+  - gem install yarn
+  # application dependencies
+  - yarn
+
+script:
+  # tests
+  - yarn run test
