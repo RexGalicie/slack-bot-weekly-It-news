@@ -14,11 +14,19 @@
     "ent": "^2.2.0",
     "express": "^4.14.0",
     "lodash": "^4.17.10",
+    "mongoose": "^5.2.4",
+    "monk": "^6.0.6",
     "node-env-file": "^0.1.8",
     "node-fetch": "^2.1.2",
     "url-regex": "^4.1.1"
   },
   "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "nodemon": "^1.18.3"
   },
   "repository": {

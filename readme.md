@@ -9,3 +9,7 @@ Also checkout the official Botkit documentation repo here: (https://github.com/h
 # Slack Bot
 
 Simple slack bot that collects links, gets titles for them and categorizes them according to user input.
+
+## DB connection
+
+mongodb://amass:secret@localhost:27017/news

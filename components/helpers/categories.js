@@ -3,4 +3,4 @@ module.exports = [
   { text: 'Releases', value: 'releases' },
   { text: 'Libs & Demos', value: 'libs' },
   { text: 'Silly stuff', value: 'silly' }
-];
+]
