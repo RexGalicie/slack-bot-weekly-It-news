@@ -6,7 +6,7 @@ const proxyquire = require('proxyquire').noCallThru()
 
 require('should-sinon')
 
-describe('Mongo', () => {
+describe('Mongo Storage', () => {
   let monkMock
   let collectionMock
   let collectionObj
@@ -30,7 +30,7 @@ describe('Mongo', () => {
 
     monkMock = sinon.stub().returns(collectionMock)
 
-    Storage = proxyquire('../../storage/mongo/index', { monk: monkMock })
+    Storage = proxyquire('../../storage/mongo', { monk: monkMock })
   })
 
   describe('Initialization', () => {
