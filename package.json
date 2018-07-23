@@ -1,7 +1,7 @@
 {
-  "name": "botkit-starter-slack",
+  "name": "slack-bot-weekly-it-news",
   "version": "0.0.2",
-  "description": "A starter kit for building a custom Slack bot with Botkit Studio",
+  "description": "A starter kit for building a custom Slack bot",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
@@ -44,13 +44,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/howdyai/botkit-starter-slack.git"
+    "url": "https://github.com/RexGalicie/slack-bot-weekly-It-news.git"
   },
   "keywords": [
     "bots",
     "chatbots",
     "slack"
   ],
-  "author": "ben@howdy.ai",
+  "author": "amassdev@gmail.com",
   "license": "ISC"
 }
