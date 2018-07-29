@@ -2,6 +2,7 @@ const env = require('node-env-file')
 const fs = require('fs')
 const path = require('path')
 const useTip = require('./components/helpers/logs')
+require('debug')('botkit:main')
 
 const envPath = path.join(__dirname, '/.env')
 if (fs.existsSync(envPath)) {
@@ -14,8 +15,6 @@ if (!process.env.CLIENTID || !process.env.CLIENTSECRET || !process.env.PORT) {
   process.exit(1)
 }
 
-const Botkit = require('botkit')
-require('debug')('botkit:main')
 const config = {
   bot_options: {
     clientId: process.env.CLIENTID,
@@ -28,10 +27,10 @@ const config = {
 let controller = {}
 
 if (process.env.STORAGE === 'mongo') {
-  controller = require('./storage/connectors/mongo')(Botkit, config)
+  controller = require('./storage/connectors/mongo')(config)
 } else {
   config.rootPath = path.join(__dirname, '/.data/db/')
-  controller = require('./storage/connectors/file')(Botkit, config)
+  controller = require('./storage/connectors/file')(config)
 }
 
 // Set up an Express-powered webserver to expose oauth and webhook endpoints
@@ -46,6 +45,7 @@ require(path.join(__dirname, '/components/onboarding.js'))(controller)
 
 // All path where are hears && listeners
 const normalizedPath = path.join(__dirname, 'skills')
-require('fs').readdirSync(normalizedPath).forEach(file => {
+
+fs.readdirSync(normalizedPath).forEach(file => {
   require('./skills/' + file)(controller)
 })

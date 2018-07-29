@@ -1,5 +1,7 @@
+const Botkit = require('botkit')
 const storage = require('../mongo')
-module.exports = (Botkit, config) => {
+
+module.exports = config => {
   const mongoStorage = storage({
     mongoUri: process.env.MONGODB_URI,
     tables: ['news']

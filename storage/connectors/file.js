@@ -1,4 +1,6 @@
-module.exports = (Botkit, config) => {
+const Botkit = require('botkit')
+
+module.exports = config => {
   const storage = require('../files/index')
   const db = storage({
     path: config.rootPath
