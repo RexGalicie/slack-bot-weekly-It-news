@@ -19,7 +19,7 @@
     "ent": "^2.2.0",
     "express": "^4.14.0",
     "lodash": "^4.17.13",
-    "mongoose": "^5.2.4",
+    "mongoose": "^5.7.5",
     "monk": "^6.0.6",
     "node-env-file": "^0.1.8",
     "node-fetch": "^2.1.2",
